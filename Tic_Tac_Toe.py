@@ -33,64 +33,65 @@ while player_or_comp not in possible_competitors:
     player_or_comp = input(
         'Will you like to play against a play or the computer?: p or c \n').lower()
 
-# if player_or_comp == 'p':
 display([1, 2, 3], [4, 5, 6], [7, 8, 9])
 count = 1
-board = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
-player1_marker = input('Player 1 choose your marker: X or O').upper()
+board_status = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
 
-while count < 10:
-    if count % 2 != 0:
-        print('Player 1')
-        p1_row = int(input('What row would you like to choose?: \n'))
-        while p1_row > 3:
-            print('Invalid row. Try again')
+if player_or_comp == 'p':
+    player1_marker = input('Player 1 choose your marker: X or O').upper()
+
+    while count < 10:
+        if count % 2 != 0:
+            print('Player 1')
             p1_row = int(input('What row would you like to choose?: \n'))
-        p1_column = int(input('What column would you like to choose?: \n'))
-        while p1_column > 3:
-            print('Invalid column. Try again')
+            while p1_row > 3:
+                print('Invalid row. Try again')
+                p1_row = int(input('What row would you like to choose?: \n'))
             p1_column = int(input('What column would you like to choose?: \n'))
+            while p1_column > 3:
+                print('Invalid column. Try again')
+                p1_column = int(input('What column would you like to choose?: \n'))
 
-        while board[p1_row - 1][p1_column - 1] != ' ':
-            print('Invalid row and column. Try again')
-            p1_row = int(input('What row would you like to choose?: \n'))
-            p1_column = int(input('What column would you like to choose?: \n'))
+            while board_status[p1_row - 1][p1_column - 1] != ' ':
+                print('Invalid row and column. Try again')
+                p1_row = int(input('What row would you like to choose?: \n'))
+                p1_column = int(input('What column would you like to choose?: \n'))
 
-        board[p1_row - 1][p1_column - 1] = player1_marker
-        display(board[0], board[1], board[2])
-        count += 1
-        if check_win(board[0], board[1], board[2]) is True:
-            print('Congratulations Player 1! You win!')
-            break
+            board_status[p1_row - 1][p1_column - 1] = player1_marker
+            display(board_status[0], board_status[1], board_status[2])
+            count += 1
+            if check_win(board_status[0], board_status[1], board_status[2]) is True:
+                print('Congratulations Player 1! You win!')
+                break
+            else:
+                pass
         else:
-            pass
-    else:
-        print('Player 2')
-        p2_row = int(input('What row would you like to choose?: \n'))
-        while p2_row > 3:
-            print('Invalid row. Try again')
+            print('Player 2')
             p2_row = int(input('What row would you like to choose?: \n'))
-        p2_column = int(input('What column would you like to choose?: \n'))
-        while p2_column > 3:
-            print('Invalid column. Try again')
+            while p2_row > 3:
+                print('Invalid row. Try again')
+                p2_row = int(input('What row would you like to choose?: \n'))
             p2_column = int(input('What column would you like to choose?: \n'))
+            while p2_column > 3:
+                print('Invalid column. Try again')
+                p2_column = int(input('What column would you like to choose?: \n'))
 
-        while board[p2_row - 1][p2_column - 1] != ' ':
-            print('Invalid row and column. Try again')
-            p2_row = int(input('What row would you like to choose?: \n'))
-            p2_column = int(input('What column would you like to choose?: \n'))
-        if player1_marker == 'X':
-            player2_marker = 'O'
-        else:
-            player2_marker = 'X'
-        board[p2_row - 1][p2_column - 1] = player2_marker
-        display(board[0], board[1], board[2])
-        count += 1
-        if check_win(board[0], board[1], board[2]) is True:
-            print('Congratulations Player 2! You win!')
-            break
-        else:
-            pass
+            while board_status[p2_row - 1][p2_column - 1] != ' ':
+                print('Invalid row and column. Try again')
+                p2_row = int(input('What row would you like to choose?: \n'))
+                p2_column = int(input('What column would you like to choose?: \n'))
+            if player1_marker == 'X':
+                player2_marker = 'O'
+            else:
+                player2_marker = 'X'
+            board_status[p2_row - 1][p2_column - 1] = player2_marker
+            display(board_status[0], board_status[1], board_status[2])
+            count += 1
+            if check_win(board_status[0], board_status[1], board_status[2]) is True:
+                print('Congratulations Player 2! You win!')
+                break
+            else:
+                pass
 
 # else:
 #     display([1, 2, 3], [4, 5, 6], [7, 8, 9])
