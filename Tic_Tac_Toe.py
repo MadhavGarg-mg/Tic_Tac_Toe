@@ -1,5 +1,6 @@
 """I will be making an interactive tik tak tok game"""
 
+
 def display(row1: list, row2: list, row3: list):
     """
     This function will display the tic tak toe board.
