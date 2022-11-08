@@ -26,48 +26,12 @@ def check_win(lst1: list, lst2: list, lst3: list):
         return True
 
 
-"""Need to add a win condition."""
-
-# def check_winner(row1: list, row2: list, row3: list):
-#     """Checks the winner"""
-#     for i in range(1, 4):
-#         thing = [row1, row2, row3]
-#         if (thing[1][i] and thing[2][i] and thing[3][i]) == 'X':
-#             print('Player 1 won!')
-#             break
-#         elif thing[1][i] and thing[2][i] and thing[3][i] == 'O':
-#             print('Player 2 won!')
-#             break
-#         elif thing[i][1] and thing[i][2] and thing[i][3] == 'X':
-#             print('Player 1 won!')
-#             break
-#         elif thing[i][1] and thing[i][2] and thing[i][3] == 'O':
-#             print('Player 2 won!')
-#             break
-#         elif thing[1][1] and thing[2][2] and thing[3][3] == 'X':
-#             print('Player 1 won!')
-#             break
-#         elif thing[1][1] and thing[2][2] and thing[3][3] == 'O':
-#             print('Player 2 won!')
-#             break
-#         elif (thing[1][3] and thing[2][2] and thing[3][1]) == 'X':
-#             print('Player 1 won!')
-#             break
-#         elif (thing[1][3] and thing[2][2] and thing[3][1]) == 'O':
-#             print('Player 2 won!')
-#             break
-#         else:
-#             pass
-
-
-# player_or_comp = input('Will you like to play against a play or the computer?: p or c \n').lower()
-# possible = ['p', 'c']
-# while player_or_comp not in possible:
-#     print(player_or_comp)
-#     print('Invalid input!')
-#     player_or_comp = input(
-#         'Will you like to play against a play or the computer?: p or c \n').lower()
-
+player_or_comp = input('Will you like to play against a play or the computer?: p or c \n').lower()
+possible_competitors = ['p', 'c']
+while player_or_comp not in possible_competitors:
+    print(f'{player_or_comp} is not an option.')
+    player_or_comp = input(
+        'Will you like to play against a play or the computer?: p or c \n').lower()
 
 # if player_or_comp == 'p':
 display([1, 2, 3], [4, 5, 6], [7, 8, 9])
@@ -127,7 +91,6 @@ while count < 10:
             break
         else:
             pass
-    # check_winner(board[0], board[1], board[2])
 
 # else:
 #     display([1, 2, 3], [4, 5, 6], [7, 8, 9])
